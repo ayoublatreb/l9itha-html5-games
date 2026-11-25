@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Star Catcher – L9itha Games</title>
+  <link rel="stylesheet" href="../shared/l9itha-game-base.css" />
+</head>
+<body>
+  <div class="game-shell">
+    <header class="game-hud">
+      <div class="hud-brand">Star Catcher</div>
+      <div class="hud-stats">
+        <span>Score:<strong id="scoreEl" class="hud-stat-value">0</strong></span>
+        <span>Best:<strong id="bestEl" class="hud-stat-value">0</strong></span>
+        <span>Lives:<strong id="livesEl" class="hud-stat-value">3</strong></span>
+        <span>Combo:<strong id="comboEl" class="hud-stat-value">1x</strong></span>
+      </div>
+      <div class="hud-actions">
+        <button id="muteBtn" class="hud-btn" type="button">Sound: On</button>
+        <button id="pauseBtn" class="hud-btn" type="button">Pause</button>
+      </div>
+    </header>
+
+    <main class="stage-wrap">
+      <canvas id="gameCanvas" class="game-canvas" width="760" height="480" aria-label="Star Catcher canvas"></canvas>
+
+      <div id="startOverlay" class="overlay">
+        <div class="overlay-card">
+          <div class="overlay-kicker">Arcade · L9itha Games</div>
+          <h1 class="overlay-title">Star Catcher</h1>
+          <p class="overlay-desc">
+            Slide your energy collector to catch golden stars (+10) and cyan comets (+30). Dodge crimson meteors or lose a shield life.
+          </p>
+          <button id="startBtn" class="btn-primary" type="button">Start Game</button>
+          <p class="controls-hint">Move: Arrow Keys / A-D / Mouse / Touch Drag</p>
+        </div>
+      </div>
+
+      <div id="overOverlay" class="overlay hidden">
+        <div class="overlay-card">
+          <div class="overlay-kicker">Session Complete</div>
+          <h2 class="overlay-title">Game Over</h2>
+          <div class="overlay-score-box">
+            <div>
+              <div class="score-cell-label">Final Score</div>
+              <div id="finalScoreEl" class="score-cell-val">0</div>
+            </div>
+            <div>
+              <div class="score-cell-label">Best Score</div>
+              <div id="finalBestEl" class="score-cell-val">0</div>
+            </div>
+          </div>
+          <button id="restartBtn" class="btn-primary" type="button">Play Again</button>
+        </div>
+      </div>
+    </main>
+
+    <div class="touch-bar mobile-only" aria-label="Touch controls">
+      <button id="leftTouch" class="touch-btn" type="button" style="flex:1;max-width:160px;">◀ Left</button>
+      <button id="rightTouch" class="touch-btn" type="button" style="flex:1;max-width:160px;">Right ▶</button>
+    </div>
+  </div>
+
+  <script src="../shared/l9itha-sfx.js"></script>
+  <script src="./game.js"></script>
+</body>
+</html>

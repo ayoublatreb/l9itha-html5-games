@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Neon Racing – L9itha Games</title>
+  <link rel="stylesheet" href="../shared/l9itha-game-base.css" />
+</head>
+<body>
+  <div class="game-shell">
+    <header class="game-hud">
+      <div class="hud-brand">Neon Racing</div>
+      <div class="hud-stats">
+        <span>Score:<strong id="scoreEl" class="hud-stat-value">0</strong></span>
+        <span>Best:<strong id="bestEl" class="hud-stat-value">0</strong></span>
+        <span>Speed:<strong id="speedEl" class="hud-stat-value">120 km/h</strong></span>
+      </div>
+      <div class="hud-actions">
+        <button id="muteBtn" class="hud-btn" type="button">Sound: On</button>
+        <button id="pauseBtn" class="hud-btn" type="button">Pause</button>
+      </div>
+    </header>
+
+    <main class="stage-wrap">
+      <canvas id="gameCanvas" class="game-canvas" width="520" height="540" aria-label="Neon Racing canvas"></canvas>
+
+      <div id="startOverlay" class="overlay">
+        <div class="overlay-card">
+          <div class="overlay-kicker">Racing · L9itha Games</div>
+          <h1 class="overlay-title">Neon Racing</h1>
+          <p class="overlay-desc">
+            Weave through midnight highway traffic across four lanes. Collect cyan turbo cells (+50) and overtake cars closely for bonus points.
+          </p>
+          <button id="startBtn" class="btn-primary" type="button">Start Race</button>
+          <p class="controls-hint">Steer: Left/Right Arrows or A/D · Turbo: Up Arrow / W</p>
+        </div>
+      </div>
+
+      <div id="overOverlay" class="overlay hidden">
+        <div class="overlay-card">
+          <div class="overlay-kicker">Crash Detected</div>
+          <h2 class="overlay-title">Race Finished</h2>
+          <div class="overlay-score-box">
+            <div>
+              <div class="score-cell-label">Final Score</div>
+              <div id="finalScoreEl" class="score-cell-val">0</div>
+            </div>
+            <div>
+              <div class="score-cell-label">Best Score</div>
+              <div id="finalBestEl" class="score-cell-val">0</div>
+            </div>
+          </div>
+          <button id="restartBtn" class="btn-primary" type="button">Race Again</button>
+        </div>
+      </div>
+    </main>
+
+    <div class="touch-bar mobile-only" aria-label="Touch controls">
+      <button id="leftTouch" class="touch-btn" type="button" style="flex:1;">◀ Steer Left</button>
+      <button id="boostTouch" class="touch-btn" type="button">Turbo</button>
+      <button id="rightTouch" class="touch-btn" type="button" style="flex:1;">Steer Right ▶</button>
+    </div>
+  </div>
+
+  <script src="../shared/l9itha-sfx.js"></script>
+  <script src="./game.js"></script>
+</body>
+</html>

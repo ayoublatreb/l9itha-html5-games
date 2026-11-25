@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Block Puzzle – L9itha Games</title>
+  <link rel="stylesheet" href="../shared/l9itha-game-base.css" />
+</head>
+<body>
+  <div class="game-shell">
+    <header class="game-hud">
+      <div class="hud-brand">Block Puzzle</div>
+      <div class="hud-stats">
+        <span>Score:<strong id="scoreEl" class="hud-stat-value">0</strong></span>
+        <span>Best:<strong id="bestEl" class="hud-stat-value">0</strong></span>
+        <span>Lines:<strong id="linesEl" class="hud-stat-value">0</strong></span>
+        <span>Level:<strong id="levelEl" class="hud-stat-value">1</strong></span>
+      </div>
+      <div class="hud-actions">
+        <button id="muteBtn" class="hud-btn" type="button">Sound: On</button>
+        <button id="pauseBtn" class="hud-btn" type="button">Pause</button>
+      </div>
+    </header>
+
+    <main class="stage-wrap">
+      <canvas id="gameCanvas" class="game-canvas" width="440" height="540" aria-label="Block Puzzle canvas"></canvas>
+
+      <div id="startOverlay" class="overlay">
+        <div class="overlay-card">
+          <div class="overlay-kicker">Puzzle · L9itha Games</div>
+          <h1 class="overlay-title">Block Puzzle</h1>
+          <p class="overlay-desc">
+            Rotate and stack falling geometric blocks to complete solid horizontal rows. Clearing multiple rows at once awards bonus points.
+          </p>
+          <button id="startBtn" class="btn-primary" type="button">Start Puzzle</button>
+          <p class="controls-hint">Move: Left/Right · Rotate: Up / W · Soft Drop: Down · Hard Drop: Space</p>
+        </div>
+      </div>
+
+      <div id="overOverlay" class="overlay hidden">
+        <div class="overlay-card">
+          <div class="overlay-kicker">Grid Full</div>
+          <h2 class="overlay-title">Game Over</h2>
+          <div class="overlay-score-box">
+            <div>
+              <div class="score-cell-label">Final Score</div>
+              <div id="finalScoreEl" class="score-cell-val">0</div>
+            </div>
+            <div>
+              <div class="score-cell-label">Best Score</div>
+              <div id="finalBestEl" class="score-cell-val">0</div>
+            </div>
+          </div>
+          <button id="restartBtn" class="btn-primary" type="button">Play Again</button>
+        </div>
+      </div>
+    </main>
+
+    <div class="touch-bar mobile-only" aria-label="Block Puzzle touch controls">
+      <button id="tLeft" class="touch-btn" type="button">◀</button>
+      <button id="tRotate" class="touch-btn" type="button">Rotate</button>
+      <button id="tDown" class="touch-btn" type="button">▼</button>
+      <button id="tDrop" class="touch-btn" type="button">Drop</button>
+      <button id="tRight" class="touch-btn" type="button">▶</button>
+    </div>
+  </div>
+
+  <script src="../shared/l9itha-sfx.js"></script>
+  <script src="./game.js"></script>
+</body>
+</html>

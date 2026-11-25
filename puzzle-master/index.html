@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Puzzle Master – L9itha Games</title>
+  <link rel="stylesheet" href="../shared/l9itha-game-base.css" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="game-shell">
+    <header class="game-hud">
+      <div class="hud-brand">Puzzle Master</div>
+      <div class="hud-stats">
+        <span>Moves:<strong id="movesEl" class="hud-stat-value">0</strong></span>
+        <span>Time:<strong id="timeEl" class="hud-stat-value">00:00</strong></span>
+        <span>Best:<strong id="bestEl" class="hud-stat-value">--</strong></span>
+      </div>
+      <div class="hud-actions">
+        <select id="sizeSelect" class="hud-btn" aria-label="Grid size">
+          <option value="3">3x3 Easy</option>
+          <option value="4" selected>4x4 Classic</option>
+          <option value="5">5x5 Expert</option>
+        </select>
+        <button id="muteBtn" class="hud-btn" type="button">Sound: On</button>
+        <button id="shuffleBtn" class="hud-btn" type="button">New Deal</button>
+      </div>
+    </header>
+
+    <main class="stage-wrap">
+      <div id="board" class="puzzle-board" role="grid" aria-label="Sliding number puzzle board"></div>
+
+      <div id="startOverlay" class="overlay">
+        <div class="overlay-card">
+          <div class="overlay-kicker">Puzzle · L9itha Games</div>
+          <h1 class="overlay-title">Puzzle Master</h1>
+          <p class="overlay-desc">
+            Slide the numbered tiles into ascending order from top-left to bottom-right, leaving the empty slot in the final corner.
+          </p>
+          <button id="startBtn" class="btn-primary" type="button">Start Puzzle</button>
+          <p class="controls-hint">Click / Tap adjacent tiles or use Arrow Keys</p>
+        </div>
+      </div>
+
+      <div id="winOverlay" class="overlay hidden">
+        <div class="overlay-card">
+          <div class="overlay-kicker">Board Solved</div>
+          <h2 class="overlay-title">Puzzle Complete!</h2>
+          <div class="overlay-score-box">
+            <div>
+              <div class="score-cell-label">Moves</div>
+              <div id="finalMovesEl" class="score-cell-val">0</div>
+            </div>
+            <div>
+              <div class="score-cell-label">Time</div>
+              <div id="finalTimeEl" class="score-cell-val">00:00</div>
+            </div>
+          </div>
+          <button id="restartBtn" class="btn-primary" type="button">Play Again</button>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="../shared/l9itha-sfx.js"></script>
+  <script src="./game.js"></script>
+</body>
+</html>

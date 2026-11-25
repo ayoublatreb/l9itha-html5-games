@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Adventure World – L9itha Games</title>
+  <link rel="stylesheet" href="../shared/l9itha-game-base.css" />
+</head>
+<body>
+  <div class="game-shell">
+    <header class="game-hud">
+      <div class="hud-brand">Adventure World</div>
+      <div class="hud-stats">
+        <span>Score:<strong id="scoreEl" class="hud-stat-value">0</strong></span>
+        <span>Stage:<strong id="stageEl" class="hud-stat-value">1/3</strong></span>
+        <span>Crystals:<strong id="crystalEl" class="hud-stat-value">0</strong></span>
+        <span>Lives:<strong id="livesEl" class="hud-stat-value">3</strong></span>
+      </div>
+      <div class="hud-actions">
+        <button id="muteBtn" class="hud-btn" type="button">Sound: On</button>
+        <button id="pauseBtn" class="hud-btn" type="button">Pause</button>
+      </div>
+    </header>
+
+    <main class="stage-wrap">
+      <canvas id="gameCanvas" class="game-canvas" width="760" height="440" aria-label="Adventure World platformer canvas"></canvas>
+
+      <div id="startOverlay" class="overlay">
+        <div class="overlay-card">
+          <div class="overlay-kicker">Adventure · L9itha Games</div>
+          <h1 class="overlay-title">Adventure World</h1>
+          <p class="overlay-desc">
+            Leap across floating twilight ruins, gather glowing cyan crystals, dodge patrolling shadow drones, and reach the warp portal across 3 stages.
+          </p>
+          <button id="startBtn" class="btn-primary" type="button">Begin Quest</button>
+          <p class="controls-hint">Move: Arrow Keys / A-D · Jump: Space / W / Up Arrow</p>
+        </div>
+      </div>
+
+      <div id="overOverlay" class="overlay hidden">
+        <div class="overlay-card">
+          <div id="overKicker" class="overlay-kicker">Quest Complete</div>
+          <h2 id="overTitle" class="overlay-title">Game Over</h2>
+          <div class="overlay-score-box">
+            <div>
+              <div class="score-cell-label">Final Score</div>
+              <div id="finalScoreEl" class="score-cell-val">0</div>
+            </div>
+            <div>
+              <div class="score-cell-label">Best Score</div>
+              <div id="finalBestEl" class="score-cell-val">0</div>
+            </div>
+          </div>
+          <button id="restartBtn" class="btn-primary" type="button">Play Again</button>
+        </div>
+      </div>
+    </main>
+
+    <div class="touch-bar mobile-only" aria-label="Platformer touch controls">
+      <button id="tLeft" class="touch-btn" type="button" style="flex:1;">◀ Left</button>
+      <button id="tRight" class="touch-btn" type="button" style="flex:1;">Right ▶</button>
+      <button id="tJump" class="touch-btn" type="button" style="flex:1.2;background:#168CFF;color:#fff;">Jump ▲</button>
+    </div>
+  </div>
+
+  <script src="../shared/l9itha-sfx.js"></script>
+  <script src="./game.js"></script>
+</body>
+</html>

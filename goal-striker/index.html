@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Goal Striker – L9itha Games</title>
+  <link rel="stylesheet" href="../shared/l9itha-game-base.css" />
+</head>
+<body>
+  <div class="game-shell">
+    <header class="game-hud">
+      <div class="hud-brand">Goal Striker</div>
+      <div class="hud-stats">
+        <span>Score:<strong id="scoreEl" class="hud-stat-value">0</strong></span>
+        <span>Best:<strong id="bestEl" class="hud-stat-value">0</strong></span>
+        <span>Goals:<strong id="goalsEl" class="hud-stat-value">0</strong></span>
+        <span>Kicks:<strong id="kicksEl" class="hud-stat-value">5</strong></span>
+      </div>
+      <div class="hud-actions">
+        <button id="muteBtn" class="hud-btn" type="button">Sound: On</button>
+      </div>
+    </header>
+
+    <main class="stage-wrap">
+      <canvas id="gameCanvas" class="game-canvas" width="720" height="460" aria-label="Goal Striker penalty shootout canvas"></canvas>
+
+      <div id="startOverlay" class="overlay">
+        <div class="overlay-card">
+          <div class="overlay-kicker">Sports · L9itha Games</div>
+          <h1 class="overlay-title">Goal Striker</h1>
+          <p class="overlay-desc">
+            Step up to the penalty spot! Aim your shot inside the goal frame and beat the diving goalkeeper. Hit the top corners for bonus accuracy points.
+          </p>
+          <button id="startBtn" class="btn-primary" type="button">Kick Off</button>
+          <p class="controls-hint">Click / Tap inside the goal net to shoot, or Arrow Keys + Space</p>
+        </div>
+      </div>
+
+      <div id="overOverlay" class="overlay hidden">
+        <div class="overlay-card">
+          <div class="overlay-kicker">Full Time</div>
+          <h2 class="overlay-title">Shootout Complete</h2>
+          <div class="overlay-score-box">
+            <div>
+              <div class="score-cell-label">Final Score</div>
+              <div id="finalScoreEl" class="score-cell-val">0</div>
+            </div>
+            <div>
+              <div class="score-cell-label">Best Score</div>
+              <div id="finalBestEl" class="score-cell-val">0</div>
+            </div>
+          </div>
+          <button id="restartBtn" class="btn-primary" type="button">Play Again</button>
+        </div>
+      </div>
+    </main>
+
+    <div class="touch-bar mobile-only" aria-label="Shootout keyboard-style touch buttons">
+      <button id="aimLeft" class="touch-btn" type="button">◀ Aim</button>
+      <button id="shootBtn" class="touch-btn" type="button" style="flex:1;background:#168CFF;color:#fff;">Shoot Ball</button>
+      <button id="aimRight" class="touch-btn" type="button">Aim ▶</button>
+    </div>
+  </div>
+
+  <script src="../shared/l9itha-sfx.js"></script>
+  <script src="./game.js"></script>
+</body>
+</html>

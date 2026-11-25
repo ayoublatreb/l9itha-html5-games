@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Space Shooter – L9itha Games</title>
+  <link rel="stylesheet" href="../shared/l9itha-game-base.css" />
+</head>
+<body>
+  <div class="game-shell">
+    <header class="game-hud">
+      <div class="hud-brand">Space Shooter</div>
+      <div class="hud-stats">
+        <span>Score:<strong id="scoreEl" class="hud-stat-value">0</strong></span>
+        <span>Best:<strong id="bestEl" class="hud-stat-value">0</strong></span>
+        <span>Wave:<strong id="waveEl" class="hud-stat-value">1</strong></span>
+        <span>Hull:<strong id="hpEl" class="hud-stat-value">3</strong></span>
+      </div>
+      <div class="hud-actions">
+        <button id="muteBtn" class="hud-btn" type="button">Sound: On</button>
+        <button id="pauseBtn" class="hud-btn" type="button">Pause</button>
+      </div>
+    </header>
+
+    <main class="stage-wrap">
+      <canvas id="gameCanvas" class="game-canvas" width="680" height="500" aria-label="Space Shooter canvas"></canvas>
+
+      <div id="startOverlay" class="overlay">
+        <div class="overlay-card">
+          <div class="overlay-kicker">Action · L9itha Games</div>
+          <h1 class="overlay-title">Space Shooter</h1>
+          <p class="overlay-desc">
+            Pilot the S-9 starfighter through waves of incoming drones. Collect cyan twin-cannon upgrades and shield cells dropped by defeated squads.
+          </p>
+          <button id="startBtn" class="btn-primary" type="button">Launch Mission</button>
+          <p class="controls-hint">Move: Arrow Keys / WASD / Touch Drag · Fire: Space (Auto-fire on Touch)</p>
+        </div>
+      </div>
+
+      <div id="overOverlay" class="overlay hidden">
+        <div class="overlay-card">
+          <div class="overlay-kicker">Hull Breached</div>
+          <h2 class="overlay-title">Mission Over</h2>
+          <div class="overlay-score-box">
+            <div>
+              <div class="score-cell-label">Final Score</div>
+              <div id="finalScoreEl" class="score-cell-val">0</div>
+            </div>
+            <div>
+              <div class="score-cell-label">Best Score</div>
+              <div id="finalBestEl" class="score-cell-val">0</div>
+            </div>
+          </div>
+          <button id="restartBtn" class="btn-primary" type="button">Play Again</button>
+        </div>
+      </div>
+    </main>
+
+    <div class="touch-bar mobile-only" aria-label="Touch controls">
+      <button id="leftTouch" class="touch-btn" type="button" style="flex:1;">◀ Left</button>
+      <button id="fireTouch" class="touch-btn" type="button" style="flex:1;">Fire Laser</button>
+      <button id="rightTouch" class="touch-btn" type="button" style="flex:1;">Right ▶</button>
+    </div>
+  </div>
+
+  <script src="../shared/l9itha-sfx.js"></script>
+  <script src="./game.js"></script>
+</body>
+</html>
